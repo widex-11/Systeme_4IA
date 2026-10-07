@@ -5,4 +5,7 @@ set(CMAKE_C_STANDARD 11)
 
 add_executable(Listen_Strukturen main.c
         linkedlist.h
-        linkedlist.c)
+        linkedlist.c
+        doublelinkedlist.c
+        doublelinkedlist.h
+)
