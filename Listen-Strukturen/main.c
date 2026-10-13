@@ -59,8 +59,5 @@ int main(void)
     ll_clear(&list);
     print_list("clear", &list);
 
-    /* TODO: Teil 2 - Benchmark mit clock() */
-    /* TODO: dasselbe fuer die DLL */
-
     return 0;
 }
