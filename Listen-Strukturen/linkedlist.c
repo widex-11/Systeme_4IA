@@ -7,12 +7,12 @@ void ll_init(LLIST_t *list)
     list->size = 0;
 }
 
-uint32_t ll_size(const LLIST_t *list)
+int64_t ll_size(const LLIST_t *list)
 {
     return list->size;
 }
 
-int ll_push_front(LLIST_t *list, double value)
+int64_t ll_push_front(LLIST_t *list, double value)
 {
     LLNODE_t *node = malloc(sizeof(LLNODE_t));
 
@@ -27,7 +27,7 @@ int ll_push_front(LLIST_t *list, double value)
     return 1;
 }
 
-int ll_push_back(LLIST_t *list, double value)
+int64_t ll_push_back(LLIST_t *list, double value)
 {
     LLNODE_t *node = malloc(sizeof(LLNODE_t));
 
@@ -52,7 +52,7 @@ int ll_push_back(LLIST_t *list, double value)
     return 1;
 }
 
-int ll_pop_front(LLIST_t *list, double *value)
+int64_t ll_pop_front(LLIST_t *list, double *value)
 {
     LLNODE_t *node = list->head;
 
@@ -69,7 +69,7 @@ int ll_pop_front(LLIST_t *list, double *value)
     return 1;
 }
 
-int ll_pop_back(LLIST_t *list, double *value)
+int64_t ll_pop_back(LLIST_t *list, double *value)
 {
     LLNODE_t *current = list->head;
 
@@ -97,10 +97,10 @@ int ll_pop_back(LLIST_t *list, double *value)
     return 1;
 }
 
-int ll_find(const LLIST_t *list, double value, uint32_t *position)
+int64_t ll_find(const LLIST_t *list, double value, int64_t *position)
 {
     const LLNODE_t *current = list->head;
-    uint32_t index = 0;
+    int64_t index = 0;
 
     while (current != NULL) {
         if (current->value == value) {
@@ -116,7 +116,7 @@ int ll_find(const LLIST_t *list, double value, uint32_t *position)
     return 0;
 }
 
-int ll_remove_at(LLIST_t *list, uint32_t index, double *value)
+int64_t ll_remove_at(LLIST_t *list, int64_t index, double *value)
 {
     LLNODE_t *current;
     LLNODE_t *node;
@@ -129,7 +129,7 @@ int ll_remove_at(LLIST_t *list, uint32_t index, double *value)
 
     current = list->head;
 
-    for (uint32_t i = 0; i < index - 1; i++)
+    for (int64_t i = 0; i < index - 1; i++)
         current = current->next;
 
     node = current->next;
@@ -144,7 +144,7 @@ int ll_remove_at(LLIST_t *list, uint32_t index, double *value)
     return 1;
 }
 
-double *ll_to_array(const LLIST_t *list, uint32_t *count)
+double *ll_to_array(const LLIST_t *list, int64_t *count)
 {
     double *array = NULL;
     const LLNODE_t *current = list->head;
@@ -159,7 +159,7 @@ double *ll_to_array(const LLIST_t *list, uint32_t *count)
     if (array == NULL)
         return NULL;
 
-    for (uint32_t i = 0; i < list->size; i++) {
+    for (int64_t i = 0; i < list->size; i++) {
         array[i] = current->value;
         current = current->next;
     }
