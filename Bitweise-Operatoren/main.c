@@ -23,6 +23,7 @@ void zeige_menue(uint16_t a, uint16_t b) {
     printf("3 A = A + B \n");
     printf("4 A = A UND B \n");
     printf("5 A = A ODER B \n");
+    printf("6 A = A XOR B \n");
     printf("0 ENDE \n");
     printf("Wahl:");
 
@@ -74,6 +75,12 @@ int main(void) {
                 a = bit_oder(a, b);
                 zeige_wert("ODER:", a);
                 break;
+
+            case 6:
+                a = bit_xor(a, b);
+                zeige_wert("XOR:", a);
+                break;
+
 
             case 0:
                 printf("Programm beendet. \n");

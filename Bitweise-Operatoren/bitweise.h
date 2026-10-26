@@ -12,5 +12,5 @@ void zeige_wert(const char *name, uint16_t wert);
 uint16_t bit_plus(uint16_t a, uint16_t b);
 uint16_t bit_und(uint16_t a, uint16_t b);
 uint16_t bit_oder(uint16_t a, uint16_t b);
-
+uint16_t bit_xor(uint16_t a, uint16_t b);
 #endif
