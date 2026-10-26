@@ -32,11 +32,6 @@ void zeige_menue(uint16_t a, uint16_t b) {
 int main(void) {
     zeige_wert("Test", 0x35AF);
 
-    printf("im_bereich(0)  = %lld\n", (long long) im_bereich(0));
-    printf("im_bereich(15) = %lld\n", (long long) im_bereich(15));
-    printf("im_bereich(16) = %lld\n", (long long) im_bereich(16));
-    printf("im_bereich(-1) = %lld\n", (long long) im_bereich(-1));
-
 
     uint16_t a = 0;
     uint16_t b = 0;
