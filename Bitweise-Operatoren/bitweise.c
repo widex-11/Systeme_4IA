@@ -23,3 +23,7 @@ void zeige_wert(const char *name, uint16_t wert) {
 }
 
 
+uint16_t bit_plus(uint16_t a, uint16_t b)
+{
+    return a + b;
+}

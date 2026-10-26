@@ -20,6 +20,7 @@ void zeige_menue(uint16_t a, uint16_t b) {
 
     printf("1 A eingeben (HEX) \n");
     printf("2 B eingeben (HEX) \n");
+    printf("3 A = A + B \n");
     printf("0 ENDE \n");
     printf("Wahl:");
 
@@ -56,12 +57,17 @@ int main(void) {
                 zeile_leeren();
                 break;
 
+            case 3:
+                a = bit_plus(a, b);
+                zeige_wert("A", a);
+                break;
+                
             case 0:
                 printf("Programm beendet. \n");
                 break;
 
             default:
-                printf("ungültige Wahl \n");
+                printf("ungueltige Wahl \n");
                 break;
 
         }
