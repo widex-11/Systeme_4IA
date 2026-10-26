@@ -21,6 +21,7 @@ void zeige_menue(uint16_t a, uint16_t b) {
     printf("1 A eingeben (HEX) \n");
     printf("2 B eingeben (HEX) \n");
     printf("3 A = A + B \n");
+    printf("4 A = A UND B \n");
     printf("0 ENDE \n");
     printf("Wahl:");
 
@@ -59,9 +60,13 @@ int main(void) {
 
             case 3:
                 a = bit_plus(a, b);
-                zeige_wert("A", a);
+                zeige_wert("Addition:", a);
                 break;
-                
+
+            case 4:
+                a = bit_und(a, b);
+                zeige_wert("UND:", a);
+                break;
             case 0:
                 printf("Programm beendet. \n");
                 break;

@@ -27,3 +27,11 @@ uint16_t bit_plus(uint16_t a, uint16_t b)
 {
     return a + b;
 }
+
+
+
+uint16_t bit_und(uint16_t a, uint16_t b)
+{
+
+    return a & b;
+}
