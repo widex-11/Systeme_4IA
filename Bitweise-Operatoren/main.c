@@ -24,6 +24,7 @@ void zeige_menue(uint16_t a, uint16_t b) {
     printf("4 A = A UND B \n");
     printf("5 A = A ODER B \n");
     printf("6 A = A XOR B \n");
+    printf("7 A = NICHT A \n");
     printf("0 ENDE \n");
     printf("Wahl:");
 
@@ -31,9 +32,16 @@ void zeige_menue(uint16_t a, uint16_t b) {
 int main(void) {
     zeige_wert("Test", 0x35AF);
 
+    printf("im_bereich(0)  = %lld\n", (long long) im_bereich(0));
+    printf("im_bereich(15) = %lld\n", (long long) im_bereich(15));
+    printf("im_bereich(16) = %lld\n", (long long) im_bereich(16));
+    printf("im_bereich(-1) = %lld\n", (long long) im_bereich(-1));
+
+
     uint16_t a = 0;
     uint16_t b = 0;
     int wahl = -1;
+
 
     setvbuf(stdout, NULL, _IONBF, 0);
 
@@ -79,6 +87,11 @@ int main(void) {
             case 6:
                 a = bit_xor(a, b);
                 zeige_wert("XOR:", a);
+                break;
+
+            case 7:
+                a = bit_nicht(a);
+                zeige_wert("NICHT:", a);
                 break;
 
 

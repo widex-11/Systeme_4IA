@@ -48,3 +48,16 @@ uint16_t bit_xor(uint16_t a, uint16_t b)
 {
     return a ^ b;
 }
+
+
+
+uint16_t bit_nicht(uint16_t a)
+{
+    return ~a;
+}
+
+
+int64_t im_bereich(int64_t n)
+{
+    return n >= 0 && n <= 15;
+}

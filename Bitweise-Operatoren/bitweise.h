@@ -13,4 +13,7 @@ uint16_t bit_plus(uint16_t a, uint16_t b);
 uint16_t bit_und(uint16_t a, uint16_t b);
 uint16_t bit_oder(uint16_t a, uint16_t b);
 uint16_t bit_xor(uint16_t a, uint16_t b);
+uint16_t bit_nicht(uint16_t a);
+int64_t im_bereich(int64_t n);
+
 #endif
