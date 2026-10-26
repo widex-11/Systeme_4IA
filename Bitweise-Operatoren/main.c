@@ -22,6 +22,7 @@ void zeige_menue(uint16_t a, uint16_t b) {
     printf("2 B eingeben (HEX) \n");
     printf("3 A = A + B \n");
     printf("4 A = A UND B \n");
+    printf("5 A = A ODER B \n");
     printf("0 ENDE \n");
     printf("Wahl:");
 
@@ -67,6 +68,13 @@ int main(void) {
                 a = bit_und(a, b);
                 zeige_wert("UND:", a);
                 break;
+
+
+            case 5:
+                a = bit_oder(a, b);
+                zeige_wert("ODER:", a);
+                break;
+
             case 0:
                 printf("Programm beendet. \n");
                 break;
