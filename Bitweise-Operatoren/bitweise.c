@@ -61,3 +61,10 @@ int64_t im_bereich(int64_t n)
 {
     return n >= 0 && n <= 15;
 }
+
+
+
+uint16_t bit_links(uint16_t a, uint16_t b)
+{
+    return a << b;
+}
