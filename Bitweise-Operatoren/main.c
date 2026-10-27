@@ -12,6 +12,19 @@ void zeile_leeren(void)
         zeichen = getchar();
 }
 
+
+int64_t lies_bitnummer(void)
+{
+    int nummer = -1;
+
+    printf("Bitnummer (0 bis 15): ");
+    if (scanf("%d", &nummer) != 1)
+        nummer = -1;
+    zeile_leeren();
+
+    return nummer;
+}
+
 void zeige_menue(uint16_t a, uint16_t b) {
     printf("\n");
     zeige_wert("A", a);
@@ -27,6 +40,7 @@ void zeige_menue(uint16_t a, uint16_t b) {
     printf("7 A = NICHT A \n");
     printf("8 A um B Stellen nach links schieben \n");
     printf("9 A um B Stellen nach rechts schieben \n");
+    printf("10 Ein Bit in A setzen \n");
     printf("0 ENDE \n");
     printf("Wahl:");
 
@@ -38,6 +52,7 @@ int main(void) {
     uint16_t a = 0;
     uint16_t b = 0;
     int wahl = -1;
+    int64_t nummer = 0;
 
 
     setvbuf(stdout, NULL, _IONBF, 0);
@@ -107,6 +122,16 @@ int main(void) {
                     zeige_wert("RECHTS:", a);
                 } else {
                     printf("B muss zwischen 0 und F liegen; A bleibt gleich\n");
+                }
+                break;
+
+            case 10:
+                nummer = lies_bitnummer();
+                if (im_bereich(nummer)) {
+                    a = bit_setzen(a, nummer);
+                    zeige_wert("SETZEN:", a);
+                } else {
+                    printf("Bitnummer muss zwischen 0 und 15 liegen; A bleibt gleich\n");
                 }
                 break;
 
