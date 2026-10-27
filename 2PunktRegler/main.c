@@ -3,10 +3,10 @@
 #include "regelkreis.h"
 
 #define DT 0.5
-#define ANZAHL 720
-#define SOLLWERT 21.0
+#define ANZAHL 10000
+#define SOLLWERT 23.0
 #define EPSILON 0.5
-#define STARTTEMPERATUR 15.0
+#define STARTTEMPERATUR 12.0
 
 
 int main(void)
@@ -38,6 +38,11 @@ int main(void)
         if (i == 0 || feld[i].heizung != feld[i - 1].heizung)
             printf("%6.1f  %7.2f  %7.0f\n", feld[i].zeit, feld[i].istwert, feld[i].heizung);
     }
+
+    if (csv_schreiben("zweipunkt.csv", feld, ANZAHL) == 1)
+        printf("\nzweipunkt.csv  geschrieben\n");
+    else
+        printf("\nFehler: zweipunkt.csv konnte nicht geschrieben werden\n");
 
     return ret;
 }
