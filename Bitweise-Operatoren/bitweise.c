@@ -80,3 +80,10 @@ uint16_t bit_setzen(uint16_t a, int64_t n)
 {
     return a | (1u << n);
 }
+
+
+
+uint16_t bit_loeschen(uint16_t a, int64_t n)
+{
+    return a & ~(1u << n);
+}
