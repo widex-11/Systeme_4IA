@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 4.3)
+project(2PunktRegler C)
+
+set(CMAKE_C_STANDARD 11)
+
+add_executable(2PunktRegler main.c
+        regelkreis.c
+        regelkreis.h)
