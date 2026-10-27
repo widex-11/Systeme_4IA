@@ -40,8 +40,10 @@ void zeige_menue(uint16_t a, uint16_t b) {
     printf("7 A = NICHT A \n");
     printf("8 A um B Stellen nach links schieben \n");
     printf("9 A um B Stellen nach rechts schieben \n");
-    printf("11 Ein Bit in A loeschen \n");
     printf("10 Ein Bit in A setzen \n");
+    printf("11 Ein Bit in A loeschen \n");
+    printf("12 Ein Bit in A umschalten \n");
+    printf("13 Ein Bit in A pruefen \n");
     printf("0 ENDE \n");
     printf("Wahl:");
 
@@ -146,6 +148,24 @@ int main(void) {
                 }
                 break;
 
+            case 12:
+                nummer = lies_bitnummer();
+                if (im_bereich(nummer)) {
+                    a = bit_umschalten(a, nummer);
+                    zeige_wert("UMSCHALTEN:", a);
+                } else {
+                    printf("Bitnummer muss zwischen 0 und 15 liegen; A bleibt gleich\n");
+                }
+                break;
+
+            case 13:
+                nummer = lies_bitnummer();
+                if (im_bereich(nummer)) {
+                    printf("Bit %lld ist %lld\n", (long long) nummer, (long long) bit_pruefen(a, nummer));
+                } else {
+                    printf("Bitnummer muss zwischen 0 und 15 liegen\n");
+                }
+                break;
             case 0:
                 printf("Programm beendet. \n");
                 break;

@@ -19,5 +19,7 @@ uint16_t bit_links(uint16_t a, uint16_t b);
 uint16_t bit_rechts(uint16_t a, uint16_t b);
 uint16_t bit_setzen(uint16_t a, int64_t n);
 uint16_t bit_loeschen(uint16_t a, int64_t n);
+uint16_t bit_umschalten(uint16_t a, int64_t n);
+int64_t bit_pruefen(uint16_t a, int64_t n);
 
 #endif

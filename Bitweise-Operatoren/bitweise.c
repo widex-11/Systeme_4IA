@@ -87,3 +87,17 @@ uint16_t bit_loeschen(uint16_t a, int64_t n)
 {
     return a & ~(1u << n);
 }
+
+
+
+uint16_t bit_umschalten(uint16_t a, int64_t n)
+{
+    return a ^ (1u << n);
+}
+
+
+
+int64_t bit_pruefen(uint16_t a, int64_t n)
+{
+    return (a >> n) & 1u;
+}
