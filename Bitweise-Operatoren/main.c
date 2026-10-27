@@ -26,6 +26,7 @@ void zeige_menue(uint16_t a, uint16_t b) {
     printf("6 A = A XOR B \n");
     printf("7 A = NICHT A \n");
     printf("8 A um B Stellen nach links schieben \n");
+    printf("9 A um B Stellen nach rechts schieben \n");
     printf("0 ENDE \n");
     printf("Wahl:");
 
@@ -99,6 +100,15 @@ int main(void) {
                 }
                 break;
 
+
+            case 9:
+                if (im_bereich(b)) {
+                    a = bit_rechts(a, b);
+                    zeige_wert("RECHTS:", a);
+                } else {
+                    printf("B muss zwischen 0 und F liegen; A bleibt gleich\n");
+                }
+                break;
 
             case 0:
                 printf("Programm beendet. \n");
