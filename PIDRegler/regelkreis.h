@@ -1,0 +1,15 @@
+//
+// Created by Maxi on 28.10.2026.
+//
+
+#ifndef PIDREGLER_REGELKREIS_H
+#define PIDREGLER_REGELKREIS_H
+
+#ifndef REGELKREIS_H
+#define REGELKREIS_H
+
+#define HEIZRATE 0.5
+#define VERLUST 0.02
+#define AUSSENTEMPERATUR 5.0
+
+#endif //PIDREGLER_REGELKREIS_H
