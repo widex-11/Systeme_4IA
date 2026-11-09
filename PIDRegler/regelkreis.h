@@ -23,4 +23,11 @@ double strecke(double temperatur, double heizung, double dt);
 
 double pid_regler(double fehler, double *integral, double *fehler_alt, double dt);
 
+typedef struct messpunkt_s {
+    double zeit;
+    double sollwert;
+    double istwert;
+    double heizung;
+} messpunkt_t;
+
 #endif
