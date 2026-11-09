@@ -2,6 +2,7 @@
 // Created by Maxi on 28.10.2026.
 //
 
+#include <stdint.h>
 
 #ifndef REGELKREIS_H
 #define REGELKREIS_H
@@ -30,4 +31,7 @@ typedef struct messpunkt_s {
     double heizung;
 } messpunkt_t;
 
+
+
+int64_t csv_schreiben(const char *dateiname, messpunkt_t feld[], int64_t anzahl);
 #endif
