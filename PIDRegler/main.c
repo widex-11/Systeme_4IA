@@ -38,16 +38,19 @@ int main(void){
 
     printf("Minute  Istwert  Heizung\n");
 
-    for (i = 0; i < ANZAHL; i = i + 120)
+    for (i = 0; i < ANZAHL; i = i + 120) {
         printf("%6.1f  %7.2f  %7.2f\n", feld[i].zeit,feld[i].istwert, feld[i].heizung);
-    return ret;
+    }
 
 
 
-    if (csv_schreiben("pid.csv", feld, ANZAHL) == 1)
 
+    if (csv_schreiben("pid.csv", feld, ANZAHL) == 1) {
         printf("\n  pid.csv  geschrieben  \n");
-    else
-
+    }
+    else {
         printf("\n  Fehler \n");
+    }
+
+    return ret;
 }
